@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pricing-system/core": ["libs/core/src/index.ts"],
+      "@pricing-system/ui/authentication": [
+        "libs/ui/authentication/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
