@@ -16,8 +16,13 @@
     "baseUrl": ".",
     "paths": {
       "@pricing-system/core": ["libs/core/src/index.ts"],
+      "@pricing-system/data": ["libs/data/src/index.ts"],
       "@pricing-system/ui/authentication": [
         "libs/ui/authentication/src/index.ts"
+      ],
+      "@pricing-system/ui/layout": ["libs/ui/layout/src/index.ts"],
+      "@pricing-system/ui/user-management": [
+        "libs/ui/user-management/src/index.ts"
       ]
     }
   },

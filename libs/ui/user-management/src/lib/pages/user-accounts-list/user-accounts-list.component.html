@@ -1,0 +1,36 @@
+<div class='container mx-auto sm:px-4'>
+    <h4 class='text-2xl  mt-3'>User Accounts</h4>
+    <br>
+    <div class='flex justify-end'>
+        <button class="inline-block" (click)="openModal()" nz-button nzType="primary">Add User</button>
+    </div>
+  <br>
+  
+    <nz-table [nzPageSize]='5' #basicTable [nzData]='userAccounts'>
+        <thead>
+        <tr>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>User</th>
+          <th>Verified</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr style='cursor: pointer !important;' routerLink='/users/list/{{data.id}}'
+            *ngFor='let data of basicTable.data'>
+          <td>{{data.username}}</td>
+          <td>{{data.name}} {{data.surname}}</td>
+          <td>{{data.contactDetails?.address}}</td>
+          <td>{{data?.userType}}</td>
+          <td>
+            <i *ngIf='!data.isVerified' class='mx-3' style='color: red' nz-icon nzType='close-circle'></i>
+            <i *ngIf='data.isVerified' class='mx-3' style='color: green' nz-icon nzType='check-circle'></i>
+          </td>
+        </tr>
+        </tbody>
+      </nz-table>
+  
+  </div>
+  

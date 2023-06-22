@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <ul
+    nz-menu
+    nzMode="inline"
+    nzTheme="light"
+    [nzInlineCollapsed]="isCollapsed"
+    class="min-h-screen"
+  >
+    <li nz-menu-item routerLink="/party-structure/broadcasts">
+      <i nz-icon nzType="dot-chart"></i>
+      <span>Dashboard</span>
+    </li>
+    <li nz-submenu nzTitle="User Management" nzIcon="team">
+      <ul>
+        <li routerLink="/users" nz-menu-item>Users</li>
+        <li routerLink="/users/roles" nz-menu-item>Roles</li>
+      </ul>
+    </li>
+
+    <li nz-menu-item routerLink="/parameters">
+      <i nz-icon nzType="bank"></i>
+      <span>Banks</span>
+    </li>
+
+    <li nz-menu-item routerLink="/parameters">
+      <i nz-icon nzType="setting"></i>
+      <span>System Parameters</span>
+    </li>
+  </ul>
+</div>

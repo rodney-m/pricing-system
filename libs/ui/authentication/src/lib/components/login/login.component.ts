@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         console.log(res)
         this.uiLoader.stop()
         this.notification.success('Success', 'Login successful', {nzAnimate: true, nzDuration: 4000});
-        this.authService.setToken(res.data.token);
+        this.authService.setToken(res.accessToken);
         this.authService.getToken() ? this.router.navigate(['/']) : ''
       },
       error: (err) => {

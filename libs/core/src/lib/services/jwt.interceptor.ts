@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
-import { API } from '@pricing-system/core';
+import { API } from '../data/API'
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
@@ -18,6 +18,7 @@ export class JwtInterceptor implements HttpInterceptor {
     const token = this.AuthService.getToken();
     const isAPIUrl = request.url.startsWith(API.BaseUrl)
 
+    
     if(token && isAPIUrl){
       request = request.clone({
         setHeaders : {

@@ -9,14 +9,14 @@ export class AuthService {
 
   constructor() { }
   setToken(data:any){
-    localStorage.setItem(TOKEN, data)
+    sessionStorage.setItem(TOKEN, data)
   }
 
   getToken() {
-    return localStorage.getItem(TOKEN)
+    return sessionStorage.getItem(TOKEN)
   }
 
   removeToken(){
-    localStorage.removeItem(TOKEN);
+    sessionStorage.removeItem(TOKEN);
   }
 }

@@ -12,6 +12,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
+  exports: [RouterModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
