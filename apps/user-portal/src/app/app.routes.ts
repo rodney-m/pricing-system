@@ -14,7 +14,10 @@ export const appRoutes: Route[] = [
         children: [
             {
                 path: 'users' , loadChildren: ()=> import('@pricing-system/ui/user-management').then(m => m.UiUserManagementModule)
-            }
+            },
+            {
+                path: 'banks' , loadChildren: ()=> import('@pricing-system/ui/banks').then(m => m.UiBanksModule)
+            },
         ]
         
     }
