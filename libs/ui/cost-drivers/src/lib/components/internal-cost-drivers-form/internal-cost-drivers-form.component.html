@@ -1,0 +1,43 @@
+<form nz-form nzLayout="vertical" [formGroup]="form" >
+    <div nz-row nzGutter="16" class="custom-row">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="name">Aspect</nz-form-label>
+          <nz-form-control nzErrorTip="Aspect is required">
+            <input nz-input type="text" formControlName="aspect" id="aspect" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="baseAmount">Base Amount</nz-form-label>
+          <nz-form-control nzErrorTip="Base Amount is required">
+            <input nz-input type="number" min="0" formControlName="baseAmount" id="baseAmount" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="newAmount">New Amount</nz-form-label>
+          <nz-form-control nzErrorTip="New amount is required">
+            <input nz-input type="number" min="0" formControlName="newAmount" id="newAmount" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>     
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="comment">Comments</nz-form-label>
+          <nz-form-control >
+            <textarea formControlName="comments" nz-input placeholder="Controlled autosize" [nzAutosize]="{ minRows: 3, maxRows: 5 }"></textarea>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    
+    </div>
+  </form>
+
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+    <button nz-button nzType="primary" *ngIf="!editMode" (click)="submit()" [nzLoading]="loading">Submit</button>
+    <button nz-button nzType="primary" *ngIf="editMode" (click)="edit()" [nzLoading]="loading">Update</button>
+  </div>

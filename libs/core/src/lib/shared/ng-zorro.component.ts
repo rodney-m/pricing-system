@@ -30,6 +30,7 @@ import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzMessageModule,
     NzImageModule,
     NzGridModule,
-    NzCardModule
+    NzCardModule,
+    NzEmptyModule
   ],
   exports: [
     NzPaginationModule,
@@ -98,7 +100,8 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzMessageModule,
     NzImageModule,
     NzGridModule,
-    NzCardModule
+    NzCardModule,
+    NzEmptyModule
   ],
   providers: [NzMessageService, NzNotificationService]
 })

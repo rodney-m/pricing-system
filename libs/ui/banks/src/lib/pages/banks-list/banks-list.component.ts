@@ -71,7 +71,9 @@ export class BanksListComponent implements OnInit {
     editModal.afterClose.subscribe((data) => {
       if (data) this.getBanks(this.size, this.page);
     });
+  }
 
+  delete(id: number){
 
   }
 }

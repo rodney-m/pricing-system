@@ -22,12 +22,12 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>ZWL Min Price</th>
-        <th>Percentage Price ZWL</th>
-        <th>Max Price ZWL</th>
-        <th>Min Price USD</th>
-        <th>Percentage Price USD</th>
-        <th>Max Price USD</th>
+        <th>Min Price (ZWL)</th>
+        <th>Percentage Price (ZWL)</th>
+        <th>Max Price (ZWL)</th>
+        <th>Min Price (USD)</th>
+        <th>Percentage Price (USD)</th>
+        <th>Max Price (USD)</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -52,7 +52,7 @@
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu nzSelectable>
               <li nz-menu-item (click)="edit(data)"><span nz-icon nzType="edit" nzTheme="outline"></span> &nbsp; <span>Edit</span></li>
-              <li nz-menu-item><span nz-icon nzType="eye" nzTheme="outline"></span> &nbsp; <span>View</span></li>
+              <li nz-menu-item [routerLink]="data.id"><span nz-icon nzType="eye" nzTheme="outline"></span> &nbsp; <span>View</span></li>
               <li nz-menu-item nzDanger><span nz-icon nzType="delete" nzTheme="outline"></span> &nbsp; <span>Delete</span></li>
             </ul>
           </nz-dropdown-menu>
@@ -61,13 +61,16 @@
     </tbody>
   </nz-table>
 
-  <nz-pagination
-    [nzPageSizeOptions]="[5, 10, 20, 50]"
-    [nzPageIndex]="currentPage"
-    [nzTotal]="totalItems"
-    nzShowSizeChanger
-    [nzPageSize]="size"
-    (nzPageSizeChange)="pageSizeChange($event)"
-    (nzPageIndexChange)="pageIndexChange($event)"
-  ></nz-pagination>
+  <div class="mt-4">
+    <nz-pagination
+      [nzPageSizeOptions]="[5, 10, 20, 50]"
+      [nzPageIndex]="currentPage"
+      [nzTotal]="totalItems"
+      nzShowSizeChanger
+      [nzPageSize]="size"
+      (nzPageSizeChange)="pageSizeChange($event)"
+      (nzPageIndexChange)="pageIndexChange($event)"
+    ></nz-pagination>
+  </div>
+
 </div>

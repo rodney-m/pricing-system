@@ -5,6 +5,8 @@ module.exports = {
     "./libs/ui/authentication/**/*.{html,ts}",
     "./libs/ui/layout/**/*.{html,ts}",
     "./libs/ui/user-management/**/*.{html,ts}",
+    "./libs/ui/banks/**/*.{html,ts}",
+    "./libs/ui/cost-drivers/**/*.{html,ts}",
   ],
   theme: {
     extend: {

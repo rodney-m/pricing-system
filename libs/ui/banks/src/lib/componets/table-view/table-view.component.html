@@ -1,0 +1,14 @@
+<table class="table table-striped bg-white" *ngIf="display && display.length > 0">
+    <tbody>
+        <tr *ngFor="let item of display">
+            <td>{{item.label}}</td>
+            <td>
+                <b>
+                    item.value
+                </b>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<nz-empty *ngIf="!(display && display.length > 0)"></nz-empty>
