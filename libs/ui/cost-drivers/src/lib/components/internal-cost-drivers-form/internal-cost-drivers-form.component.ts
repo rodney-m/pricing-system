@@ -42,6 +42,7 @@ export class InternalCostDriversFormComponent implements OnInit {
       },
       error: (err) => {
         console.log(err)
+        this.loading = false
       },
       complete: () => {
         this.loading = false

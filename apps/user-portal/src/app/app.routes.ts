@@ -21,6 +21,9 @@ export const appRoutes: Route[] = [
             {
                 path: 'cost-drivers' , loadChildren: ()=> import('@pricing-system/ui/cost-drivers').then(m => m.UiCostDriversModule)
             },
+            {
+                path: 'calculations' , loadChildren: ()=> import('@pricing-system/ui/calculations').then(m => m.UiCalculationsModule)
+            },
         ]
         
     }

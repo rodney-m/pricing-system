@@ -1,0 +1,51 @@
+<div class="container mx-auto sm:px-4">
+    <h4 class="text-2xl mt-3">Calculations</h4>
+    
+  
+    <nz-table
+      [nzLoading]="loading"
+      [nzShowPagination]="false"
+      #basicTable
+      [nzData]="results"
+    >
+      <thead>
+        <tr>
+          <th>Mean Min Price (ZWL)</th>
+          <th>Meadian Min Price (ZWL)</th>
+          <th>Mean Percentage Change Price (ZWL)</th>
+          <th>Meadian Percentage Change Price (ZWL)</th>
+          <th>Mean Max Price (ZWL)</th>
+          <th>Meadian Max Price (ZWL)</th>
+          <th>Mean Min Price (USD)</th>
+          <th>Meadian Min Price (USD)</th>
+          <th>Mean Percentage Change (USD)</th>
+          <th>Median Percentage Price (USD)</th>
+          <th>Mean Max Price (USD)</th>
+          <th>Meadian Max Price (USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          style="cursor: pointer !important"
+          
+          *ngFor="let data of basicTable.data"
+        >
+          <td>{{ data?.meanMinPriceZwl | currency : 'ZWL ' }}</td>
+          <td>{{ data?.medianMinPriceZwl | currency : 'ZWL ' }}</td>
+          <td>{{ data?.meanPercentageChangeZwl | currency : 'ZWL ' }}</td>
+          <td>{{ data?.medianPercentageChangeZwl | currency : 'ZWL ' }}</td>
+          <td>{{ data?.meanMaxPriceZwl | currency : 'ZWL ' }}</td>
+          <td>{{ data?.medianMaxPriceZwl | currency : 'ZWL ' }}</td>
+          <td>{{ data?.meanMinPriceUsd | currency   }}</td>
+          <td>{{data?.medianMinPriceUsd | currency }} </td>
+          <td>{{data?.meanPercentageChangeUsd | currency }} </td>
+          <td>{{data?.medianPercentageChangeUsd | currency }} </td>
+          <td>{{data?.meanMaxPriceUsd | currency }} </td>
+          <td>{{data?.medianMaxPriceUsd | currency }} </td>
+        </tr>
+      </tbody>
+    </nz-table>
+
+  
+  </div>
+  

@@ -7,6 +7,7 @@ module.exports = {
     "./libs/ui/user-management/**/*.{html,ts}",
     "./libs/ui/banks/**/*.{html,ts}",
     "./libs/ui/cost-drivers/**/*.{html,ts}",
+    "./libs/ui/calculations/**/*.{html,ts}",
   ],
   theme: {
     extend: {
