@@ -15,7 +15,7 @@ export class BanksListComponent implements OnInit {
     private modal: NzModalService, 
     private service: ApiService,
     ) {}
-  banks: Bank[] = [];
+  banks: any[] = [];
   size = 10;
   page = 0;
   loading = false;
@@ -40,7 +40,7 @@ export class BanksListComponent implements OnInit {
   getBanks(size : number, page : number) {
     this.loading = true;
     this.service
-      .getPaginated({ size, page }, '/bank')
+      .getPaginated({ size, page }, '/institution')
       .subscribe({
         next: (res: any) => {
           this.banks = res.result.content;

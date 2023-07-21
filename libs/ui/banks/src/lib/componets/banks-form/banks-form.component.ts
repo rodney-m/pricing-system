@@ -14,7 +14,7 @@ export class BanksFormComponent implements OnInit {
   form!: FormGroup;
   loading = false;
   editMode = false;
-  @Input() public bank! : Bank;
+  @Input() public bank! : any;
   constructor(
     private fb: FormBuilder, 
     private modalRef : NzModalRef, 
@@ -34,12 +34,12 @@ export class BanksFormComponent implements OnInit {
 
   prefillData(){
       this.form.patchValue({name: this.bank.name})
-      this.form.patchValue({minPriceZWL: this.bank.minPriceZWL})
-      this.form.patchValue({percentagePriceZWL: this.bank.percentagePriceZWL})
-      this.form.patchValue({maxPriceZWL: this.bank.maxPriceZWL})
-      this.form.patchValue({minPriceUSD: this.bank.minPriceUSD})
-      this.form.patchValue({percentagePriceUSD: this.bank.percentagePriceUSD})
-      this.form.patchValue({maxPriceUSD: this.bank.maxPriceUSD})
+      // this.form.patchValue({minPriceZWL: this.bank.minPriceZWL})
+      // this.form.patchValue({percentagePriceZWL: this.bank.percentagePriceZWL})
+      // this.form.patchValue({maxPriceZWL: this.bank.maxPriceZWL})
+      // this.form.patchValue({minPriceUSD: this.bank.minPriceUSD})
+      // this.form.patchValue({percentagePriceUSD: this.bank.percentagePriceUSD})
+      // this.form.patchValue({maxPriceUSD: this.bank.maxPriceUSD})
   }
 
   get formControls(){
@@ -49,18 +49,18 @@ export class BanksFormComponent implements OnInit {
   innitializeForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      minPriceZWL: ['', Validators.required],
-      percentagePriceZWL: ['', Validators.required],
-      maxPriceZWL: ['', Validators.required],
-      minPriceUSD: ['', Validators.required],
-      percentagePriceUSD: ['', Validators.required],
-      maxPriceUSD: ['', Validators.required],
+      // minPriceZWL: ['', Validators.required],
+      // percentagePriceZWL: ['', Validators.required],
+      // maxPriceZWL: ['', Validators.required],
+      // minPriceUSD: ['', Validators.required],
+      // percentagePriceUSD: ['', Validators.required],
+      // maxPriceUSD: ['', Validators.required],
     });
   }
 
   submit(){
     this.loading = true;
-    this.service.postToUrl('/bank', this.form.value).subscribe({
+    this.service.postToUrl('/institution', this.form.value).subscribe({
       next: ()=> {
         this.notification.success('Success', 'Competitor added successfully', {nzAnimate: true, nzDuration:4000});
         this.modalRef.close(true)
@@ -79,7 +79,7 @@ export class BanksFormComponent implements OnInit {
 
   editBank(){
     this.loading = true;
-    this.service.updateToUrl(`/bank/${this.bank.id}`, this.form.value).subscribe({
+    this.service.updateToUrl(`/institution/${this.bank.id}`, this.form.value).subscribe({
       next:()=> {
         this.notification.success('Success', 'Competitor updated successfully', {nzAnimate: true, nzDuration:4000});
         this.modalRef.close(true)

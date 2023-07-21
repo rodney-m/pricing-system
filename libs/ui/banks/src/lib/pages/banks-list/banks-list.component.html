@@ -22,12 +22,12 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Min Price (ZWL)</th>
+        <!-- <th>Min Price (ZWL)</th>
         <th>Percentage Price (ZWL)</th>
         <th>Max Price (ZWL)</th>
         <th>Min Price (USD)</th>
         <th>Percentage Price (USD)</th>
-        <th>Max Price (USD)</th>
+        <th>Max Price (USD)</th> -->
         <th>Actions</th>
       </tr>
     </thead>
@@ -38,12 +38,12 @@
         *ngFor="let data of basicTable.data"
       >
         <td>{{ data.name }}</td>
-        <td>{{ data.minPriceZWL }}</td>
+        <!-- <td>{{ data.minPriceZWL }}</td>
         <td>{{ data.percentagePriceZWL }}</td>
         <td>{{ data.maxPriceZWL }}</td>
         <td>{{ data.minPriceUSD }}</td>
         <td>{{ data.percentagePriceUSD }}</td>
-        <td>{{ data.maxPriceUSD }}</td>
+        <td>{{ data.maxPriceUSD }}</td> -->
         <td>
           <span nz-dropdown [nzDropdownMenu]="menu">
             <span nz-icon nzType="more" nzTheme="outline"></span>

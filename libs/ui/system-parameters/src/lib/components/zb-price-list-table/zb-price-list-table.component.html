@@ -1,0 +1,69 @@
+<nz-table
+      [nzLoading]="isLoading"
+      [nzShowPagination]="false"
+      #basicTable
+      [nzData]="prices"
+    >
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Bank</th>
+          <th>Min Price (ZWL)</th>
+          <th>Percentage Price (ZWL)</th>
+          <th>Max Price (ZWL)</th>
+          <th>Min Price (USD)</th>
+          <th>Percentage Price (USD)</th>
+          <th>Max Price (USD)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          style="cursor: pointer !important"
+          *ngFor="let data of basicTable.data"
+        >
+          <td>{{ data?.productOffering?.description }}</td>
+          <td>{{ data?.institution?.name }}</td>
+          <td>{{ data.minPriceZWL }}</td>
+          <td>{{ data.percentagePriceZWL }}</td>
+          <td>{{ data.maxPriceZWL }}</td>
+          <td>{{ data.minPriceUSD }}</td>
+          <td>{{ data.percentagePriceUSD }}</td>
+          <td>{{ data.maxPriceUSD }}</td>
+          <td>
+            <span nz-dropdown [nzDropdownMenu]="menu">
+              <span nz-icon nzType="more" nzTheme="outline"></span>
+            </span>
+
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+              <ul nz-menu nzSelectable>
+                <li nz-menu-item (click)="edit(data)">
+                  <span nz-icon nzType="edit" nzTheme="outline"></span> &nbsp;
+                  <span>Edit</span>
+                </li>
+                <li nz-menu-item [routerLink]="data.id">
+                  <span nz-icon nzType="eye" nzTheme="outline"></span> &nbsp;
+                  <span>View</span>
+                </li>
+                <li nz-menu-item nzDanger>
+                  <span nz-icon nzType="delete" nzTheme="outline"></span> &nbsp;
+                  <span>Delete</span>
+                </li>
+              </ul>
+            </nz-dropdown-menu>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+
+    <div class="mt-4">
+        <nz-pagination
+          [nzPageSizeOptions]="[5, 10, 20, 50]"
+          [nzPageIndex]="currentPage"
+          [nzTotal]="totalItems"
+          nzShowSizeChanger
+          [nzPageSize]="size"
+          (nzPageSizeChange)="pageSizeChange($event)"
+          (nzPageIndexChange)="pageIndexChange($event)"
+        ></nz-pagination>
+      </div>

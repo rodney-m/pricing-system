@@ -24,6 +24,12 @@ export const appRoutes: Route[] = [
             {
                 path: 'calculations' , loadChildren: ()=> import('@pricing-system/ui/calculations').then(m => m.UiCalculationsModule)
             },
+            {
+                path: 'pricing-handbook' , loadChildren: ()=> import('@pricing-system/ui/pricing-handbook').then(m => m.UiPricingHandbookModule)
+            },
+            {
+                path: 'parameters' , loadChildren: ()=> import('@pricing-system/ui/system-parameters').then(m => m.UiSystemParametersModule)
+            },
         ]
         
     }

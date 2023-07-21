@@ -24,6 +24,12 @@
       "@pricing-system/ui/calculations": ["libs/ui/calculations/src/index.ts"],
       "@pricing-system/ui/cost-drivers": ["libs/ui/cost-drivers/src/index.ts"],
       "@pricing-system/ui/layout": ["libs/ui/layout/src/index.ts"],
+      "@pricing-system/ui/pricing-handbook": [
+        "libs/ui/pricing-handbook/src/index.ts"
+      ],
+      "@pricing-system/ui/system-parameters": [
+        "libs/ui/system-parameters/src/index.ts"
+      ],
       "@pricing-system/ui/user-management": [
         "libs/ui/user-management/src/index.ts"
       ]

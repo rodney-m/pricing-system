@@ -15,9 +15,10 @@ export class CalculationsComponent implements OnInit {
   }
 
   getCalculations(){
-    this.service.getFromUrl('/bank/mean-median').subscribe({
+    this.loading = true;
+    this.service.getFromUrl('/pricing-hand-book/calculated-decisions?page=0&size=100').subscribe({
       next: (res: any) => {
-        this.results = [res.result]
+        this.results = res.result.content
         console.log(this.results)
       },
       error: (err: any) => {

@@ -1,0 +1,34 @@
+<form nz-form nzLayout="vertical" [formGroup]="form">
+  <div nz-row nzGutter="16" class="custom-row">
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="name">Product Item</nz-form-label>
+        <nz-form-control nzErrorTip="product item is required">
+          <input nz-input type="text" formControlName="description" id="name" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+</form>
+
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+  <button
+    nz-button
+    nzType="primary"
+    *ngIf="!editMode"
+    (click)="submit()"
+    [nzLoading]="loading"
+  >
+    Submit
+  </button>
+  <button
+    nz-button
+    nzType="primary"
+    *ngIf="editMode"
+    (click)="editProduct()"
+    [nzLoading]="loading"
+  >
+    Update
+  </button>
+</div>
