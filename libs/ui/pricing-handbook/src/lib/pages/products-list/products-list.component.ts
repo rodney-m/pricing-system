@@ -22,7 +22,7 @@ export class ProductsListComponent implements OnInit {
 
   openModal() {
     const banksModal = this.modal.create({
-      nzTitle: 'Add a bank',
+      nzTitle: 'Add a revenue line',
       nzContent: ProductFormComponent,
     });
 

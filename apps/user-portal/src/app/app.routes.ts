@@ -30,6 +30,9 @@ export const appRoutes: Route[] = [
             {
                 path: 'parameters' , loadChildren: ()=> import('@pricing-system/ui/system-parameters').then(m => m.UiSystemParametersModule)
             },
+            {
+                path: 'Suppliers' , loadChildren: ()=> import('@pricing-system/ui/suppliers').then(m => m.UiSuppliersModule)
+            },
         ]
         
     }

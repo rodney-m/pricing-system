@@ -27,6 +27,7 @@
       "@pricing-system/ui/pricing-handbook": [
         "libs/ui/pricing-handbook/src/index.ts"
       ],
+      "@pricing-system/ui/suppliers": ["libs/ui/suppliers/src/index.ts"],
       "@pricing-system/ui/system-parameters": [
         "libs/ui/system-parameters/src/index.ts"
       ],

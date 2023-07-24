@@ -33,6 +33,7 @@ export class ProductFormComponent implements OnInit{
 
   prefillData(){
       this.form.patchValue({description: this.product.description})
+      this.form.patchValue({sensitive: this.product.sensitive})
       
   }
 
@@ -43,6 +44,7 @@ export class ProductFormComponent implements OnInit{
   innitializeForm() {
     this.form = this.fb.group({
       description: ['', Validators.required],
+      sensitive: [false],
     });
   }
 

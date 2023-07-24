@@ -1,0 +1,37 @@
+<nz-table  [nzShowPagination]="false" [nzData]="['']" [nzLoading]="loading">
+    <thead>
+      <tr>
+        <th>Cost Driver </th>
+        <th>Average Increase Over the period</th>
+        <th>Weight Allocated to Cost driver</th>
+        <th>Weight Cost Increase</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td>Average price increases directly effected by suppliers</td>
+        <td>{{ costDriver?.avgIncreaseInSupplier / 100 | percent: '1.2-2' }}</td>
+        <td>{{costDriver?.weightAllocatedToSupplierCost / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightedCostIncreaseToSupplierCost / 100 | percent: '1.2-2'}}</td>        
+      </tr>
+      <tr>
+        <td>Average increase in fuel cost for the period</td>
+        <td>{{costDriver?.avgIncreaseInFuelCost / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightAllocatedToFuelCost / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightedCostIncreaseToFuelCost / 100 | percent: '1.2-2'}}</td>        
+      </tr>
+      <tr>
+        <td>MoM inflation increase for the period under review</td>
+        <td>{{costDriver?.momInflationIncrease / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightAllocatedToMoMInflation / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightedCostIncreaseToMomInflation / 100 | percent: '1.2-2'}}</td>        
+      </tr>
+      <tr>
+        <td>Market exchange rate average depreciation for the period</td>
+        <td>{{costDriver?.marketExchangeRateDepreciation / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightAllocatedToMarketExchangeRateDepreciation / 100 | percent: '1.2-2'}}</td>
+        <td>{{costDriver?.weightedCostIncreaseToMarketExchangeRate / 100 | percent: '1.2-2'}}</td>        
+      </tr>
+    </tbody>
+    
+  </nz-table>

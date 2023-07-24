@@ -1,46 +1,19 @@
 <div class="container mx-auto sm:px-4">
   <h4 class="text-2xl mt-3">Cost drivers</h4>
+  
   <br />
   <div class="flex justify-end">
     <button
-      class="inline-block mr-2"
-      nz-button
-      nzType="default"
-      (click)="openExternal()"
-    >
-      Add External Cost Driver
-    </button>
-    <button
       class="inline-block"
+      (click)="edit()"
       nz-button
       nzType="primary"
-      (click)="openInternal()"
     >
-      Add Internal Cost Driver
+      Edit 
     </button>
   </div>
-  <br />
 
-  <nz-tabset>
-    <nz-tab nzTitle="Internal">
-      <pricing-system-cost-drivers-table
-        (pagenationEvent)="internalPaginationEvent($event)"
-        [size]="internalPageSize"
-        [totalItems]="internalTotalItems"
-        [currentPage]="internalCurrentPage"
-        [costDrivers]="internalCostDrivers"
-        [loading]="internalLoading"
-      ></pricing-system-cost-drivers-table>
-    </nz-tab>
-    <nz-tab nzTitle="External">
-      <pricing-system-cost-drivers-table
-        (pagenationEvent)="externalPaginationEvent($event)"
-        [size]="externalPageSize"
-        [totalItems]="externalTotalItems"
-        [currentPage]="externalCurrentPage"
-        [costDrivers]="externalCostDrivers"
-        [loading]="externalLoading"
-      ></pricing-system-cost-drivers-table>
-    </nz-tab>
-  </nz-tabset>
+  <br>
+
+  <pricing-system-cost-driver-view [costDriver]="costDriver" [loading]="loading"></pricing-system-cost-driver-view>
 </div>

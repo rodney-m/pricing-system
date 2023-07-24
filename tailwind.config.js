@@ -9,6 +9,7 @@ module.exports = {
     "./libs/ui/cost-drivers/**/*.{html,ts}",
     "./libs/ui/pricing-handbook/**/*.{html,ts}",
     "./libs/ui/calculations/**/*.{html,ts}",
+    "./libs/ui/Suppliers/**/*.{html,ts}",
   ],
   theme: {
     extend: {
