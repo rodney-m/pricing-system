@@ -28,6 +28,9 @@ export const appRoutes: Route[] = [
                 path: 'pricing-handbook' , loadChildren: ()=> import('@pricing-system/ui/pricing-handbook').then(m => m.UiPricingHandbookModule)
             },
             {
+                path: 'cost-allocation' , loadChildren: ()=> import('@pricing-system/ui/cost-allocation').then(m => m.UiCostAllocationModule)
+            },
+            {
                 path: 'parameters' , loadChildren: ()=> import('@pricing-system/ui/system-parameters').then(m => m.UiSystemParametersModule)
             },
             {

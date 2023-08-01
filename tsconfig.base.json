@@ -22,6 +22,9 @@
       ],
       "@pricing-system/ui/banks": ["libs/ui/banks/src/index.ts"],
       "@pricing-system/ui/calculations": ["libs/ui/calculations/src/index.ts"],
+      "@pricing-system/ui/cost-allocation": [
+        "libs/ui/cost-allocation/src/index.ts"
+      ],
       "@pricing-system/ui/cost-drivers": ["libs/ui/cost-drivers/src/index.ts"],
       "@pricing-system/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@pricing-system/ui/pricing-handbook": [

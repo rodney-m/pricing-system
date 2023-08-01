@@ -6,7 +6,6 @@
           <nz-form-control nzErrorTip="product is required">
             <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a product" formControlName="productOfferingId">
                 <nz-option *ngFor="let product of products" [nzLabel]="product?.description" [nzValue]="product?.id"></nz-option>
-
               </nz-select>
           </nz-form-control>
         </nz-form-item>
