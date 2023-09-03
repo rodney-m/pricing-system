@@ -16,6 +16,7 @@
     <nz-table
       [nzLoading]="loading"
       [nzShowPagination]="false"
+      [nzFrontPagination]="false"
       #basicTable
       [nzData]="costAllocations"
       nzBordered
@@ -31,7 +32,7 @@
           <th rowspan="2"></th>
           <th colspan="6">VOLUME/TRANSACTION COUNT</th>
           <th rowspan="2"></th>
-          <th colspan="6">MONTHLY REVENUE LINE UNIT COSTS (ZWL)</th>
+          <th colspan="6">MONTHLY REVENUE LINE UNIT COSTS (ZWLz)</th>
           
         </tr>
         <tr>
@@ -50,7 +51,7 @@
           
           *ngFor="let data of basicTable.data"
         >
-          <td>{{ data.revenueLine?.description }}</td>
+          <td>{{ data?.revenueLine?.description }}</td>
           <td>{{ data?.channel }}</td>
           <td>{{ data?.activity }}</td>
           <td>{{ data?.weight }}</td>

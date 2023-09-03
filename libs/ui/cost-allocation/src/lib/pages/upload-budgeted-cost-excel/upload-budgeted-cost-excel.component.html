@@ -1,0 +1,22 @@
+<div>
+    <p class="font-bold text-center">Only upload the specified template. Download template <a class="italic underline" [href]="'assets/budgetedCosts.xlsx'" download>here</a></p>
+
+    <div class="mt-4">
+        <nz-upload
+        [nzAccept]="'.xlsx,.xls'"
+        [nzFileList]="fileList"
+        [nzShowButton]="fileList.length < 1"
+        [nzBeforeUpload]="beforeUpload"
+      >
+        <button nz-button>
+          <span nz-icon nzType="upload"></span>
+          Upload
+        </button>
+      </nz-upload>
+    </div>
+</div>
+
+<div *nzModalFooter>
+    <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+    <button nz-button nzType="primary"  (click)="upload()" [nzLoading]="loading">Submit</button>
+  </div>

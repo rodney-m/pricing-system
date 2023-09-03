@@ -6,7 +6,7 @@
     </div>
   <br>
   
-    <nz-table [nzPageSize]='5' #basicTable [nzData]='userAccounts'>
+    <nz-table  [nzFrontPagination]="false" [nzPageSize]='5' #basicTable [nzData]='userAccounts'>
         <thead>
         <tr>
           <th>Username</th>

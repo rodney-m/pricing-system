@@ -1,0 +1,54 @@
+<div class="container mx-auto sm:px-4">
+    <h4 class="text-2xl mt-3">Cost Allocation</h4>
+  
+    <br />
+  
+    <nz-table
+      [nzLoading]="loading"
+      [nzShowPagination]="false"
+      [nzFrontPagination]="false"
+      #basicTable
+      [nzData]="costAllocations"
+      nzBordered
+    >
+      <thead>
+        <tr>
+          <th >Revenue Lines</th>
+          <th >Channel Cost</th>
+          <th >Total Cost</th>
+          <th >Volume</th>
+          <th >Unit Cost ZWL</th>
+          <th >Unit Cost USD</th>
+          <th >Activity</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr          
+          *ngFor="let data of basicTable.data"
+        >
+          <td >{{data?.productOffering?.description}}</td>
+          <td>{{data?.weightedChannelCost}}</td>     
+          <td>{{data?.totalCost}}</td>     
+          <td>{{data?.volume}}</td>     
+          <td>{{data?.unitCostZwl | currency : 'ZWL '}}</td>     
+          <td>{{data?.unitCostUsd | currency}}</td>     
+          <td>{{data?.activity}}</td>     
+        </tr>
+      </tbody>
+    </nz-table>
+  
+    <div class="mt-4">
+      <nz-pagination
+      [nzPageIndex]="currentPage"
+      [nzTotal]="totalItems"
+      [nzPageSizeOptions]="nzPageSizeOptions"
+      nzShowSizeChanger
+      [nzPageSize]="size"
+      (nzPageSizeChange)="pageSizeChange($event)"
+      (nzPageIndexChange)="pageIndexChange($event)"
+    ></nz-pagination>
+    </div>
+  
+  </div>
+  
