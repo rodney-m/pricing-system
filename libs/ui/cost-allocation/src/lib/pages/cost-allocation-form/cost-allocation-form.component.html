@@ -1,0 +1,209 @@
+<div class="container mx-auto sm:px-4 my-12">
+  <form nz-form nzLayout="vertical" [formGroup]="costAllocationForm">
+    <div nz-row nzGutter="16" class="custom-row">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="name">Revenue line</nz-form-label>
+          <nz-form-control>
+            <nz-select
+              nzShowSearch
+              nzAllowClear
+              nzPlaceHolder="Select a revenue line"
+              formControlName="productOfferingId"
+            >
+              <nz-option
+                *ngFor="let product of products"
+                [nzLabel]="product?.description"
+                [nzValue]="product?.id"
+              ></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="channel">Channel</nz-form-label>
+          <nz-form-control>
+            <input
+              nz-input
+              type="text"
+              formControlName="channel"
+              id="channel"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="activity">Activity</nz-form-label>
+          <nz-form-control>
+            <input
+              nz-input
+              type="text"
+              formControlName="activity"
+              id="activity"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="weight">Weight</nz-form-label>
+          <nz-form-control>
+            <input nz-input type="text" formControlName="weight" id="weight" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <nz-divider nzText="Monthly Revenues"></nz-divider>
+
+      <div nz-col nzSpan="24" formArrayName="monthlyRevenues">
+        <div
+          nz-row
+          nzGutter="16"
+          *ngFor="
+            let child of monthlyRevenuesFormControl.controls;
+            let i = index
+          "
+          formGroupName="{{ i }}"
+        >
+          <div nz-col nzSpan="10">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="name">Month</nz-form-label>
+              <nz-form-control>
+                <nz-select
+                  nzShowSearch
+                  nzAllowClear
+                  nzPlaceHolder="Select a revenue line"
+                  formControlName="month"
+                >
+                  <nz-option
+                    *ngFor="let month of months"
+                    [nzLabel]="month"
+                    [nzValue]="month"
+                  ></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="10">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="weight">Revenue</nz-form-label>
+              <nz-form-control>
+                <input
+                  nz-input
+                  type="text"
+                  formControlName="revenue"
+                  id="revenue"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="4" class="remove-control">
+            <button
+              nz-button
+              nzType="default"
+              nzSize="small"
+              nzDanger
+              (click)="removeMonthlyRevenue(i)"
+            >
+              <span nz-icon nzType="close"></span>
+              Remove
+            </button>
+          </div>
+        </div>
+
+        <button
+          nz-button
+          nzType="default"
+          nzSize="small"
+          (click)="addMonthlyRevenue()"
+        >
+          <span nz-icon nzType="plus"></span>
+          add
+        </button>
+      </div>
+
+      <nz-divider nzText="Volume Transaction Count"></nz-divider>
+
+      <div nz-col nzSpan="24" formArrayName="volumeTransactionCount">
+        <div
+          nz-row
+          nzGutter="16"
+          *ngFor="
+            let child of volumeTransactionCountFormControl.controls;
+            let i = index
+          "
+          formGroupName="{{ i }}"
+        >
+          <div nz-col nzSpan="10">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="name">Month</nz-form-label>
+              <nz-form-control>
+                <nz-select
+                  nzShowSearch
+                  nzAllowClear
+                  nzPlaceHolder="Select a revenue line"
+                  formControlName="month"
+                >
+                  <nz-option
+                    *ngFor="let month of months"
+                    [nzLabel]="month"
+                    [nzValue]="month"
+                  ></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="10">
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="weight"
+                >Transaction Count</nz-form-label
+              >
+              <nz-form-control>
+                <input
+                  nz-input
+                  type="text"
+                  formControlName="tranCount"
+                  id="tranCount"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="4" class="remove-control">
+            <button
+              nz-button
+              nzType="default"
+              nzSize="small"
+              nzDanger
+              (click)="removeMonthlyRevenue(i)"
+            >
+              <span nz-icon nzType="close"></span>
+              Remove
+            </button>
+          </div>
+        </div>
+
+        <button
+          nz-button
+          nzType="default"
+          nzSize="small"
+          (click)="addVolumeTransactionCount()"
+        >
+          <span nz-icon nzType="plus"></span>
+          add
+        </button>
+      </div>
+
+      <div class="mt-4">
+        <button style="display: block!important" nz-button nzType="primary" (click)="submit()" [nzLoading]="loading" nzBlock>          
+          <span nz-icon nzType="save" ></span>
+          Save
+        </button>
+      </div>
+
+  
+    </div>
+  </form>
+  
+</div>

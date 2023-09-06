@@ -1,0 +1,70 @@
+<form nz-form nzLayout="vertical" [formGroup]="form" >
+    <div nz-row nzGutter="16" class="custom-row">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="name">Product</nz-form-label>
+          <nz-form-control nzErrorTip="product is required">
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a product" formControlName="productOfferingId">
+                <nz-option *ngFor="let product of products" [nzLabel]="product?.description" [nzValue]="product?.id"></nz-option>
+              </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="minPriceZWL">Min ZWL Price</nz-form-label>
+          <nz-form-control nzErrorTip="MinZWL Price is required">
+            <input nz-input type="number" min="0" formControlName="minPriceZWL" id="minPriceZWL" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="percentagePriceZWL">Percentage Price ZWL</nz-form-label>
+          <nz-form-control nzErrorTip="Percentage Price ZWL is required">
+            <input nz-input type="number" min="0" formControlName="percentagePriceZWL" id="percentagePriceZWL" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="maxPriceZWL">Max Price ZWL</nz-form-label>
+          <nz-form-control nzErrorTip="Max Price ZWL is required">
+            <input nz-input type="number" min="0" formControlName="maxPriceZWL" id="maxPriceZWL" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="minPriceUSD">Min Price USD</nz-form-label>
+          <nz-form-control nzErrorTip="Percentage Price USD is required">
+            <input nz-input type="number" min="0" formControlName="minPriceUSD" id="minPriceUSD" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="percentagePriceUSD">Percentage Price USD</nz-form-label>
+          <nz-form-control nzErrorTip="Percentage Price USD is required">
+            <input nz-input type="number" min="0" formControlName="percentagePriceUSD" id="percentagePriceUSD" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="maxPriceUSD">Max Price USD</nz-form-label>
+          <nz-form-control nzErrorTip="Max Price USD is required">
+            <input nz-input type="number" min="0" formControlName="maxPriceUSD" id="maxPriceUSD" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      
+    </div>
+  </form>
+
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+    <button nz-button nzType="primary" *ngIf="!editMode" (click)="submit()" [nzLoading]="loading">Submit</button>
+    <button nz-button nzType="primary" *ngIf="editMode" (click)="editBank()" [nzLoading]="loading">Update</button>
+  </div>

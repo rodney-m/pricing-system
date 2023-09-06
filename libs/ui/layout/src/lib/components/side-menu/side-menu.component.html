@@ -17,9 +17,39 @@
       </ul>
     </li>
 
-    <li nz-menu-item routerLink="/parameters">
+    <li nz-menu-item routerLink="/banks">
       <i nz-icon nzType="bank"></i>
       <span>Banks</span>
+    </li>
+   
+    <li nz-menu-item routerLink="/cost-drivers">
+      <i nz-icon nzType="dollar"></i>
+      <span>Cost drivers</span>
+    </li>
+    
+    <li nz-submenu nzTitle="Cost Allocation" nzIcon="stock">
+      <ul>
+        <li routerLink="/cost-allocation" nz-menu-item>Cost Allocation</li>
+        <li routerLink="/cost-allocation/activity" nz-menu-item>Activity</li>
+        <li routerLink="/cost-allocation/budgeted-costs" nz-menu-item>Budgeted Costs</li>
+        <li routerLink="/cost-allocation/volume" nz-menu-item>Volume</li>
+      </ul>
+    </li>
+    <li nz-menu-item routerLink="/calculations">
+      <i nz-icon nzType="calculator"></i>
+      <span>Calculations</span>
+    </li>
+    
+    <li nz-submenu nzTitle="Pricing handbook" nzIcon="book">
+      <ul>
+        <li routerLink="/pricing-handbook" nz-menu-item>handbook</li>
+        <li routerLink="/pricing-handbook/products" nz-menu-item>Product offerings</li>
+      </ul>
+    </li>
+
+    <li nz-menu-item routerLink="/Suppliers">
+      <i nz-icon nzType="team"></i>
+      <span>Suppliers</span>
     </li>
 
     <li nz-menu-item routerLink="/parameters">

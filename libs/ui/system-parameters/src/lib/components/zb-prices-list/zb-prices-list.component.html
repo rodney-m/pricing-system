@@ -1,0 +1,24 @@
+<div>
+    <div class="flex justify-end">
+        <button
+          class="inline-block"
+          (click)="openModal()"
+          nz-button
+          nzType="primary"
+        >
+          Add Prices
+        </button>
+    
+    </div>
+    <div class="mt-4">
+        <pricing-system-zb-price-list-table 
+        [prices]="prices"
+        [size]="size"
+        [totalItems]="totalItems"
+        [currentPage]="currentPage"
+        (pageSizeEvent)="pageSizeChange($event)"
+        (pageIndexEvent)="pageIndexChange($event)"
+        (refresh)="refresh()"
+        ></pricing-system-zb-price-list-table>
+    </div>
+</div>

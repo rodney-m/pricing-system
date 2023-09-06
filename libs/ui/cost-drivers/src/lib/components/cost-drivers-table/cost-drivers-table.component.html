@@ -1,0 +1,57 @@
+<div>
+<nz-table
+[nzLoading]="loading"
+[nzShowPagination]="false"
+[nzFrontPagination]="false"
+#basicTable
+[nzData]="costDrivers"
+>
+<thead>
+  <tr>
+    <th>Aspect</th>
+    <th>Base Amount</th>
+    <th>New Amount</th>
+    <th>Comment</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr
+    style="cursor: pointer !important"
+    
+    *ngFor="let data of basicTable.data"
+  >
+    <td>{{ data.aspect }}</td>
+    <td>{{ data.baseAmount }}</td>
+    <td>{{ data.newAmount }}</td>
+    <td>{{ data.comment }}</td>
+    <td>
+      <span nz-dropdown [nzDropdownMenu]="menu">
+        <span nz-icon nzType="more" nzTheme="outline"></span>
+      </span>
+
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu nzSelectable>
+          <li nz-menu-item (click)="edit(data)"><span nz-icon nzType="edit" nzTheme="outline"></span> &nbsp; <span>Edit</span></li>
+          <li nz-menu-item ><span nz-icon nzType="eye" nzTheme="outline"></span> &nbsp; <span>View</span></li>
+          <li nz-menu-item nzDanger><span nz-icon nzType="delete" nzTheme="outline"></span> &nbsp; <span>Delete</span></li>
+        </ul>
+      </nz-dropdown-menu>
+    </td>
+  </tr>
+</tbody>
+</nz-table>
+
+<div class="mt-4">
+<nz-pagination
+  [nzPageSizeOptions]="[5, 10, 20, 50]"
+  [nzPageIndex]="currentPage"
+  [nzTotal]="totalItems"
+  nzShowSizeChanger
+  [nzPageSize]="size"
+  (nzPageSizeChange)="pageSizeChange($event)"
+  (nzPageIndexChange)="pageIndexChange($event)"
+></nz-pagination>
+</div>
+
+</div>

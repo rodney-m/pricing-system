@@ -1,0 +1,19 @@
+<div class="container mx-auto sm:px-4">
+  <h4 class="text-2xl mt-3">Cost drivers</h4>
+  
+  <br />
+  <div class="flex justify-end">
+    <button
+      class="inline-block"
+      (click)="edit()"
+      nz-button
+      nzType="primary"
+    >
+      Edit 
+    </button>
+  </div>
+
+  <br>
+
+  <pricing-system-cost-driver-view [costDriver]="costDriver" [loading]="loading"></pricing-system-cost-driver-view>
+</div>

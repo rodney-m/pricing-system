@@ -1,0 +1,54 @@
+<div class="container mx-auto sm:px-4">
+    <h4 class="text-2xl mt-3">Budgeted Costs</h4>
+    <br />
+    <div class="flex justify-end">
+      <button
+        class="inline-block"
+        nz-button
+        nzType="primary"
+        (click)="uploadExcel()"
+      >
+        Bulk upload
+      </button>
+    </div>
+    <br />
+  
+    <nz-table
+      [nzLoading]="loading"
+      [nzShowPagination]="false"
+      [nzFrontPagination]="false"
+      #basicTable
+      [nzData]="budgetedCostsList"
+      nzBordered
+    >
+      <thead>
+        <tr>
+          <th >Revenue Lines</th>
+          <th >Total Cost</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr          
+          *ngFor="let data of basicTable.data"
+        >
+          <td>{{data?.description}}</td>
+          <td>{{data?.totalCost}}</td>     
+        </tr>
+      </tbody>
+    </nz-table>
+  
+    <div class="mt-4">
+      <nz-pagination
+      [nzPageIndex]="currentPage"
+      [nzTotal]="totalItems"
+      [nzPageSizeOptions]="nzPageSizeOptions"
+      nzShowSizeChanger
+      [nzPageSize]="size"
+      (nzPageSizeChange)="pageSizeChange($event)"
+      (nzPageIndexChange)="pageIndexChange($event)"
+    ></nz-pagination>
+    </div>
+  
+  </div>
+  

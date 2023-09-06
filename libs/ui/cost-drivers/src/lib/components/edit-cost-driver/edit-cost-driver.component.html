@@ -1,0 +1,214 @@
+<form nz-form nzLayout="vertical" [formGroup]="form">
+  <div nz-row nzGutter="16" class="custom-row">
+    <nz-divider nzText="Suppliers"></nz-divider>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="avgIncreaseInSupplier"
+          >Average Increase over the period</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="avgIncreaseInSupplier"
+            id="avgIncreaseInSupplier"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightAllocatedToSupplierCost"
+          >Weight Allocated to Cost Driver</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightAllocatedToSupplierCost"
+            id="weightAllocatedToSupplierCost"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightedCostIncreaseToSupplierCost"
+          >Weighted Cost Increase
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightedCostIncreaseToSupplierCost"
+            id="weightedCostIncreaseToSupplierCost"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <nz-divider nzText="Fuel"></nz-divider>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="avgIncreaseInFuelCost"
+          >Average Increase over the period</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="avgIncreaseInFuelCost"
+            id="avgIncreaseInFuelCost"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightAllocatedToFuelCost"
+          >Weight Allocated to Cost Driver</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightAllocatedToFuelCost"
+            id="weightAllocatedToFuelCost"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightedCostIncreaseToFuelCost"
+          >Weighted Cost Increase
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightedCostIncreaseToFuelCost"
+            id="weightedCostIncreaseToFuelCost"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <nz-divider nzText="MoM Inflation"></nz-divider>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightedCostIncreaseToFuelCost"
+          >Average Increase over the period</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightedCostIncreaseToFuelCost"
+            id="weightedCostIncreaseToFuelCost"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightAllocatedToMoMInflation"
+          >Weight Allocated to Cost Driver</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightAllocatedToMoMInflation"
+            id="weightAllocatedToMoMInflation"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="weightedCostIncreaseToMomInflation"
+          >Weighted Cost Increase
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightedCostIncreaseToMomInflation"
+            id="weightedCostIncreaseToMomInflation"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <nz-divider nzText="Exchange Rate"></nz-divider>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="marketExchangeRateDepreciation"
+          >Average Increase over the period</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="marketExchangeRateDepreciation"
+            id="marketExchangeRateDepreciation"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label
+          nzRequired
+          nzFor="weightAllocatedToMarketExchangeRateDepreciation"
+          >Weight Allocated to Cost Driver</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightAllocatedToMarketExchangeRateDepreciation"
+            id="weightAllocatedToMarketExchangeRateDepreciation"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label
+          nzRequired
+          nzFor="weightedCostIncreaseToMarketExchangeRate"
+          >Weighted Cost Increase
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="weightedCostIncreaseToMarketExchangeRate"
+            id="weightedCostIncreaseToMarketExchangeRate"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+</form>
+
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="submit()"
+    [nzLoading]="loading"
+  >
+    Submit
+  </button>
+
+</div>
