@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '@pricing-system/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'pricing-system-cost-allocation-list',
@@ -16,7 +17,7 @@ export class CostAllocationListComponent implements OnInit {
   nzPageSizeOptions = [10, 20, 50, 100];
 
 
-  constructor(private service : ApiService){}
+  constructor(private service : ApiService, private notification : NzNotificationService){}
 
   ngOnInit(): void {
     this.getCostAllocations(this.size, this.page);
@@ -29,6 +30,8 @@ export class CostAllocationListComponent implements OnInit {
         this.costAllocations = res?.result?.content
       }, error: (err) => {
         console.log(err);
+        console.log(err);
+        this.notification.error('Error', err?.error?.message ? err?.error?.message  :'Error occurred');
         this.loading = false;
       },
       complete: () => this.loading = false

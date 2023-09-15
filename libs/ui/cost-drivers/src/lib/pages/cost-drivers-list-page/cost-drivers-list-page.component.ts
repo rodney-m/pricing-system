@@ -30,12 +30,18 @@ export class CostDriversListPageComponent implements OnInit {
         nzContent: EditCostDriverComponent,
         nzComponentParams: {costDriver : this.costDriver}
       })
+
+      editModal.afterClose.subscribe((data) => {
+        if (data) {
+          this.getCostDrivers()
+        }
+      })
     }
 
 
     getCostDrivers(){
       this.loading = true;
-      this.service.getFromUrl('/constant-external-cost-driver').subscribe({
+      this.service.getFromUrl('/constant-external-cost-driver/final-table').subscribe({
         next: (res) => {
           this.costDriver = res.result;
         },

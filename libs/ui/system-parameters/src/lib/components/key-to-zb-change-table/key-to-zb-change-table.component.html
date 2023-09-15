@@ -1,0 +1,26 @@
+<nz-table   [nzFrontPagination]="false" [nzShowPagination]="false" [nzData]="['']" [nzLoading]="loading">
+    <thead>
+      <tr>
+        <th>Calculated Variance </th>
+        <th>Deviation from market Avg</th>
+        <th>% increase / decrease as per key cost driver</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <td>Negative : ZB &lt; Market Price</td>
+        <td>{{negativeVariance?.deviationFromMarketAvg  / 100 | percent: '1.2-2'}}</td>
+        <td>{{negativeVariance?.percentageIncreaseOrDecrease  / 100 | percent: '1.2-2'}}</td>
+        <td><span class="cursor-pointer" nz-icon nzType="edit" (click)="edit(negativeVariance)" nzTheme="outline"></span></td>        
+    </tr>
+    <tr>
+        <td>Positive : ZB &gt; Market Price</td>
+        <td>{{positiveVariance?.deviationFromMarketAvg  / 100 | percent: '1.2-2'}}</td>
+        <td>{{positiveVariance?.percentageIncreaseOrDecrease  / 100 | percent: '1.2-2'}}</td>
+        <td><span class="cursor-pointer" nz-icon nzType="edit" (click)="edit(positiveVariance)" nzTheme="outline"></span></td>        
+    </tr>
+    
+    </tbody>
+    
+  </nz-table>

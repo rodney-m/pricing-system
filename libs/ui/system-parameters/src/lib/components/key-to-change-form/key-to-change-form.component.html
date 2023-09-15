@@ -1,0 +1,44 @@
+<form nz-form nzLayout="vertical" [formGroup]="form">
+  <div nz-row nzGutter="16" class="custom-row">
+    <nz-divider [nzText]="'Variance type : ' + changeType?.calculatedVariance"></nz-divider>
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="deviationFromMarketAvg"
+          >Deviation from market</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="deviationFromMarketAvg"
+            id="deviationFromMarketAvg"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div nz-col nzSpan="24">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="percentageIncreaseOrDecrease"
+          >% increase / decrease as per cost driver</nz-form-label
+        >
+        <nz-form-control>
+          <input
+            nz-input
+            type="text"
+            formControlName="percentageIncreaseOrDecrease"
+            id="percentageIncreaseOrDecrease"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+   
+  </div>
+</form>
+
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="cancel()">Cancel</button>
+  <button nz-button nzType="primary" (click)="submit()" [nzLoading]="loading">
+    Submit
+  </button>
+</div>

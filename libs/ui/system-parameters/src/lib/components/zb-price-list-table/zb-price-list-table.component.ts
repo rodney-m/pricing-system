@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ZbPricesFormComponent } from '../zb-prices-form/zb-prices-form.component';
+import { ApiService } from '@pricing-system/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'pricing-system-zb-price-list-table',
@@ -8,7 +10,7 @@ import { ZbPricesFormComponent } from '../zb-prices-form/zb-prices-form.componen
   styleUrls: ['./zb-price-list-table.component.scss'],
 })
 export class ZbPriceListTableComponent {
-  constructor(private modal : NzModalService){}
+  constructor(private modal : NzModalService, private service : ApiService, private notification : NzNotificationService){}
   @Input() prices :any  = []
   @Input() isLoading   = false
   @Input() size   = 0
@@ -39,6 +41,21 @@ export class ZbPriceListTableComponent {
     editModal.afterClose.subscribe((data) => {
       if (data) this.refresh.emit()
     });
+  }
+
+  delete(id : number){
+    console.log(id);
+
+    this.service.delete(`/product-offering/${id}`).subscribe({
+      next: (res) => {
+        this.refresh.emit();
+        this.notification.success('Success', 'Successfully deleted' )
+
+      },
+      error: (err) => {
+        this.notification.error('Error', err?.erroccr?.message ? err?.error?.message : 'Failed to delete' )
+      }
+    })
   }
   
 }

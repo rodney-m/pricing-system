@@ -54,6 +54,7 @@ export class UserAccountsFormComponent implements OnInit {
       },
       error: () => {
         this.notification.error('Error', 'Failed to create user', {nzAnimate: true, nzDuration: 4000})
+        this.isLoading = false;
       },
       complete: ()=> {
         this.isLoading = false;

@@ -11,6 +11,7 @@ module.exports = {
     "./libs/ui/calculations/**/*.{html,ts}",
     "./libs/ui/Suppliers/**/*.{html,ts}",
     "./libs/ui/cost-allocation/**/*.{html,ts}",
+    "./libs/ui/system-parameters/**/*.{html,ts}",
   ],
   theme: {
     extend: {

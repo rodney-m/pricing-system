@@ -46,7 +46,7 @@
                   <span nz-icon nzType="eye" nzTheme="outline"></span> &nbsp;
                   <span>View</span>
                 </li>
-                <li nz-menu-item nzDanger>
+                <li nz-menu-item nzDanger (click)="delete(data.id)">
                   <span nz-icon nzType="delete" nzTheme="outline"></span> &nbsp;
                   <span>Delete</span>
                 </li>

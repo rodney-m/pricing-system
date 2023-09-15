@@ -25,41 +25,58 @@ export class EditCostDriverComponent implements OnInit {
   cancel(){
     this.modalRef.close(false);
   }
-  submit(){}
+  submit(){
+    this.loading = true;
+
+    this.service.postToUrl('/constant-external-cost-driver', this.form.value).subscribe({
+      next: ()=> {
+        this.notification.success('Success', 'Cost driver values captured successfully', {nzAnimate: true, nzDuration:4000});
+        this.modalRef.close(true)
+      },
+      error: (err) => {
+        this.notification.error('Error', err?.error?.message ? err?.error?.message : 'Failed to update const drivers');
+        this.loading = false;
+      },
+      complete: () => {
+        this.loading = false
+      }
+    })
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      avgIncreaseInSupplier: [0, Validators.required],
-      weightAllocatedToSupplierCost: [0, Validators.required],
-      weightedCostIncreaseToSupplierCost: [0, Validators.required],
+      // avgIncreaseInSupplier: [0, Validators.required],
+      // weightAllocatedToSupplierCost: [0, Validators.required],
+      // weightedCostIncreaseToSupplierCost: [0, Validators.required],
       avgIncreaseInFuelCost: [0, Validators.required],
       weightAllocatedToFuelCost: [0, Validators.required],
-      weightedCostIncreaseToFuelCost: [0, Validators.required],
+      // weightedCostIncreaseToFuelCost: [0, Validators.required],
       momInflationIncrease: [0, Validators.required],
       weightAllocatedToMoMInflation: [0, Validators.required],
-      weightedCostIncreaseToMomInflation: [0, Validators.required],
+      // weightedCostIncreaseToMomInflation: [0, Validators.required],
       marketExchangeRateDepreciation: [0, Validators.required],
       weightAllocatedToMarketExchangeRateDepreciation: [0, Validators.required],
-      weightedCostIncreaseToMarketExchangeRate: [0, Validators.required],
+      // weightedCostIncreaseToMarketExchangeRate: [0, Validators.required],
     });
 
     if (this.costDriver) {
-      this.patchValues()
+      this.patchValues();
+      this.editMode = true;
     }
   }
 
   patchValues() {
     this.form.patchValue({avgIncreaseInSupplier : this.costDriver?.avgIncreaseInSupplier})
     this.form.patchValue({weightAllocatedToSupplierCost : this.costDriver?.weightAllocatedToSupplierCost})
-    this.form.patchValue({weightedCostIncreaseToSupplierCost : this.costDriver?.weightedCostIncreaseToSupplierCost})
+    // this.form.patchValue({weightedCostIncreaseToSupplierCost : this.costDriver?.weightedCostIncreaseToSupplierCost})
     this.form.patchValue({avgIncreaseInFuelCost : this.costDriver?.avgIncreaseInFuelCost})
     this.form.patchValue({weightAllocatedToFuelCost : this.costDriver?.weightAllocatedToFuelCost})
-    this.form.patchValue({weightedCostIncreaseToFuelCost : this.costDriver?.weightedCostIncreaseToFuelCost})
+    // this.form.patchValue({weightedCostIncreaseToFuelCost : this.costDriver?.weightedCostIncreaseToFuelCost})
     this.form.patchValue({momInflationIncrease : this.costDriver?.momInflationIncrease})
     this.form.patchValue({weightAllocatedToMoMInflation : this.costDriver?.weightAllocatedToMoMInflation})
-    this.form.patchValue({weightedCostIncreaseToMomInflation : this.costDriver?.weightedCostIncreaseToMomInflation})
+    // this.form.patchValue({weightedCostIncreaseToMomInflation : this.costDriver?.weightedCostIncreaseToMomInflation})
     this.form.patchValue({marketExchangeRateDepreciation : this.costDriver?.marketExchangeRateDepreciation})
     this.form.patchValue({weightAllocatedToMarketExchangeRateDepreciation : this.costDriver?.weightAllocatedToMarketExchangeRateDepreciation})
-    this.form.patchValue({weightedCostIncreaseToMarketExchangeRate : this.costDriver?.weightedCostIncreaseToMarketExchangeRate})
+    // this.form.patchValue({weightedCostIncreaseToMarketExchangeRate : this.costDriver?.weightedCostIncreaseToMarketExchangeRate})
   }
 }

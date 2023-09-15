@@ -1,11 +1,11 @@
 <form nz-form nzLayout="vertical" [formGroup]="form">
   <div nz-row nzGutter="16" class="custom-row">
-    <nz-divider nzText="Suppliers"></nz-divider>
+    <!-- <nz-divider nzText="Suppliers"></nz-divider>
 
     <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="avgIncreaseInSupplier"
-          >Average Increase over the period</nz-form-label
+          >Average Increase over the period %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -21,7 +21,7 @@
     <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="weightAllocatedToSupplierCost"
-          >Weight Allocated to Cost Driver</nz-form-label
+          >Weight Allocated to Cost Driver %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -32,8 +32,10 @@
           />
         </nz-form-control>
       </nz-form-item>
-    </div>
-    <div nz-col nzSpan="24">
+    </div> -->
+
+
+    <!-- <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="weightedCostIncreaseToSupplierCost"
           >Weighted Cost Increase
@@ -47,14 +49,14 @@
           />
         </nz-form-control>
       </nz-form-item>
-    </div>
+    </div> -->
 
     <nz-divider nzText="Fuel"></nz-divider>
 
     <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="avgIncreaseInFuelCost"
-          >Average Increase over the period</nz-form-label
+          >Average Increase over the period %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -70,7 +72,7 @@
     <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="weightAllocatedToFuelCost"
-          >Weight Allocated to Cost Driver</nz-form-label
+          >Weight Allocated to Cost Driver %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -82,7 +84,7 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-    <div nz-col nzSpan="24">
+    <!-- <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="weightedCostIncreaseToFuelCost"
           >Weighted Cost Increase
@@ -96,20 +98,20 @@
           />
         </nz-form-control>
       </nz-form-item>
-    </div>
+    </div> -->
     <nz-divider nzText="MoM Inflation"></nz-divider>
 
     <div nz-col nzSpan="24">
       <nz-form-item>
-        <nz-form-label nzRequired nzFor="weightedCostIncreaseToFuelCost"
-          >Average Increase over the period</nz-form-label
+        <nz-form-label nzRequired nzFor="momInflationIncrease"
+          >Average Increase over the period %</nz-form-label
         >
         <nz-form-control>
           <input
             nz-input
             type="text"
-            formControlName="weightedCostIncreaseToFuelCost"
-            id="weightedCostIncreaseToFuelCost"
+            formControlName="momInflationIncrease"
+            id="momInflationIncrease"
           />
         </nz-form-control>
       </nz-form-item>
@@ -118,7 +120,7 @@
     <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="weightAllocatedToMoMInflation"
-          >Weight Allocated to Cost Driver</nz-form-label
+          >Weight Allocated to Cost Driver %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -130,7 +132,7 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-    <div nz-col nzSpan="24">
+    <!-- <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="weightedCostIncreaseToMomInflation"
           >Weighted Cost Increase
@@ -144,13 +146,13 @@
           />
         </nz-form-control>
       </nz-form-item>
-    </div>
+    </div> -->
     <nz-divider nzText="Exchange Rate"></nz-divider>
 
     <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label nzRequired nzFor="marketExchangeRateDepreciation"
-          >Average Increase over the period</nz-form-label
+          >Average Increase over the period %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -168,7 +170,7 @@
         <nz-form-label
           nzRequired
           nzFor="weightAllocatedToMarketExchangeRateDepreciation"
-          >Weight Allocated to Cost Driver</nz-form-label
+          >Weight Allocated to Cost Driver %</nz-form-label
         >
         <nz-form-control>
           <input
@@ -180,7 +182,7 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-    <div nz-col nzSpan="24">
+    <!-- <div nz-col nzSpan="24">
       <nz-form-item>
         <nz-form-label
           nzRequired
@@ -196,7 +198,7 @@
           />
         </nz-form-control>
       </nz-form-item>
-    </div>
+    </div> -->
   </div>
 </form>
 
